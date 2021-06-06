@@ -16,14 +16,14 @@ namespace EspanaCultura
 
         private void button1_Click(object sender, EventArgs e)
         {
-            id = Convert.ToInt32(textBox1.Text);
+            id = Convert.ToInt32(txtId.Text);
             using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
             {
                 mySqlConnection.Open();
                 MySqlCommand mySqlCommand = new MySqlCommand("ClasseAddOrEdit", mySqlConnection);
                 mySqlCommand.CommandType = CommandType.StoredProcedure;
                 mySqlCommand.Parameters.AddWithValue("_id", id);
-                mySqlCommand.Parameters.AddWithValue("_nom", textBox2.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Ajouté avec succès");
@@ -43,7 +43,7 @@ namespace EspanaCultura
                 DataTable dataClasse = new DataTable();
                 sqlDataAdapter.Fill(dataClasse);
                 dvgClasse.DataSource = dataClasse;
-                dvgClasse.Columns[0].Visible = false;
+                dvgClasse.Columns[0].Visible = true;
             }
 
         }
@@ -55,7 +55,7 @@ namespace EspanaCultura
         }
         void Clear()
         {
-            textBox1.Text = textBox2.Text = "";
+            txtId.Text = txtName.Text = "";
             id = 0;
             button1.Text = "Sauvegarder";
            
@@ -66,7 +66,7 @@ namespace EspanaCultura
             if(dvgClasse.CurrentRow.Index != -1)
             {
                 id = Convert.ToInt32(dvgClasse.CurrentRow.Cells[0].Value.ToString());
-                textBox2.Text = dvgClasse.CurrentRow.Cells[1].Value.ToString();
+                txtName.Text = dvgClasse.CurrentRow.Cells[1].Value.ToString();
                 button1.Text = "Actualiser";
                
 
@@ -134,7 +134,7 @@ namespace EspanaCultura
                 MySqlCommand mySqlCommand = new MySqlCommand("ClasseDeleteByName", mySqlConnection);
                 mySqlCommand.CommandType = CommandType.StoredProcedure;
                
-                mySqlCommand.Parameters.AddWithValue("_nom", textBox2.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Supprimer avec succès");
                 Clear();
