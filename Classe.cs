@@ -16,6 +16,7 @@ namespace EspanaCultura
 
         private void button1_Click(object sender, EventArgs e)
         {
+            id = Convert.ToInt32(textBox1.Text);
             using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
             {
                 mySqlConnection.Open();
@@ -23,6 +24,7 @@ namespace EspanaCultura
                 mySqlCommand.CommandType = CommandType.StoredProcedure;
                 mySqlCommand.Parameters.AddWithValue("_id", id);
                 mySqlCommand.Parameters.AddWithValue("_nom", textBox2.Text.Trim());
+               
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Ajouté avec succès");
                 GridFill();
@@ -56,7 +58,7 @@ namespace EspanaCultura
             textBox1.Text = textBox2.Text = "";
             id = 0;
             button1.Text = "Sauvegarder";
-            button2.Enabled = false;
+           
         }
 
         private void dvgClasse_DoubleClick(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace EspanaCultura
                 id = Convert.ToInt32(dvgClasse.CurrentRow.Cells[0].Value.ToString());
                 textBox2.Text = dvgClasse.CurrentRow.Cells[1].Value.ToString();
                 button1.Text = "Actualiser";
-                button2.Enabled = false;
+               
 
             }
         }
@@ -78,7 +80,7 @@ namespace EspanaCultura
                 mySqlConnection.Open();
                 MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("ClasseSearchByValue", mySqlConnection);
                 sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlDataAdapter.SelectCommand.Parameters.AddWithValue("_SearchByValue",button4.Text );
+                sqlDataAdapter.SelectCommand.Parameters.AddWithValue("_SearchByValue",textBox6.Text );
                 DataTable dataClasse = new DataTable();
                 sqlDataAdapter.Fill(dataClasse);
                 dvgClasse.DataSource = dataClasse;
@@ -122,6 +124,25 @@ namespace EspanaCultura
             Form2 f2 = new Form2();
             f2.ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+           
+            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
+            {
+                mySqlConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand("ClasseDeleteByName", mySqlConnection);
+                mySqlCommand.CommandType = CommandType.StoredProcedure;
+               
+                mySqlCommand.Parameters.AddWithValue("_nom", textBox2.Text.Trim());
+                mySqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Supprimer avec succès");
+                Clear();
+                GridFill();
+            }
+        }
+
+       
     }
    
 }

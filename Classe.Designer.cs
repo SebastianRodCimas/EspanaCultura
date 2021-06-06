@@ -35,11 +35,11 @@ namespace EspanaCultura
             this.dvgClasse = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.btxSupr = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgClasse)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +58,6 @@ namespace EspanaCultura
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(128, 148);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 1;
@@ -91,7 +90,6 @@ namespace EspanaCultura
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(128, 225);
-            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 5;
@@ -109,25 +107,12 @@ namespace EspanaCultura
             this.label2.Text = "Nom";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Font = new System.Drawing.Font("Lato", 10.25F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(145, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 52);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Supprimer";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button3.Font = new System.Drawing.Font("Lato", 10.25F);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(288, 376);
+            this.button3.Location = new System.Drawing.Point(304, 376);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 52);
             this.button3.TabIndex = 11;
@@ -169,17 +154,30 @@ namespace EspanaCultura
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // btxSupr
+            // 
+            this.btxSupr.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btxSupr.Font = new System.Drawing.Font("Lato", 10.25F);
+            this.btxSupr.ForeColor = System.Drawing.Color.White;
+            this.btxSupr.Location = new System.Drawing.Point(612, 376);
+            this.btxSupr.Name = "btxSupr";
+            this.btxSupr.Size = new System.Drawing.Size(109, 52);
+            this.btxSupr.TabIndex = 32;
+            this.btxSupr.Text = "Supprimer";
+            this.btxSupr.UseVisualStyleBackColor = false;
+            this.btxSupr.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Classe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btxSupr);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dvgClasse);
@@ -206,11 +204,11 @@ namespace EspanaCultura
         private System.Windows.Forms.DataGridView dvgClasse;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btxSupr;
     }
 }
 
