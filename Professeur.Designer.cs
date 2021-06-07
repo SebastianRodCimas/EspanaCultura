@@ -43,6 +43,7 @@ namespace EspanaCultura
             this.TitlePrenom = new System.Windows.Forms.Label();
             this.txtPrenom = new System.Windows.Forms.TextBox();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.btnModif = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProfesseur)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@ namespace EspanaCultura
             this.btnSave.BackColor = System.Drawing.Color.DarkRed;
             this.btnSave.Font = new System.Drawing.Font("Lato", 11.25F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(58, 358);
+            this.btnSave.Location = new System.Drawing.Point(35, 358);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 52);
             this.btnSave.TabIndex = 5;
@@ -89,7 +90,7 @@ namespace EspanaCultura
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCancel.Font = new System.Drawing.Font("Lato", 10.25F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(328, 358);
+            this.btnCancel.Location = new System.Drawing.Point(429, 358);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 52);
             this.btnCancel.TabIndex = 13;
@@ -192,12 +193,26 @@ namespace EspanaCultura
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.button5_Click);
             // 
+            // btnModif
+            // 
+            this.btnModif.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnModif.Font = new System.Drawing.Font("Lato", 11.25F);
+            this.btnModif.ForeColor = System.Drawing.Color.White;
+            this.btnModif.Location = new System.Drawing.Point(229, 358);
+            this.btnModif.Name = "btnModif";
+            this.btnModif.Size = new System.Drawing.Size(106, 52);
+            this.btnModif.TabIndex = 35;
+            this.btnModif.Text = "Modifier";
+            this.btnModif.UseVisualStyleBackColor = false;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
+            // 
             // Professeur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModif);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.TitlePrenom);
@@ -236,5 +251,6 @@ namespace EspanaCultura
         private System.Windows.Forms.Label TitlePrenom;
         private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnModif;
     }
 }

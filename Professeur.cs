@@ -37,8 +37,7 @@ namespace EspanaCultura
         {
             txtId.Text = txtName.Text = txtPrenom.Text = "";
             id = 0;
-            btnSave.Text = "Sauvegarder";
-
+           
         }
 
 
@@ -49,7 +48,7 @@ namespace EspanaCultura
             using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
             {
                 mySqlConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand("ProfesseurAddOrEdit", mySqlConnection);
+                MySqlCommand mySqlCommand = new MySqlCommand("ProfesseurAdd", mySqlConnection);
                 mySqlCommand.CommandType = CommandType.StoredProcedure;
                 mySqlCommand.Parameters.AddWithValue("_id", id);
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
@@ -57,6 +56,26 @@ namespace EspanaCultura
 
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Ajouté avec succès");
+                GridFill();
+
+
+            }
+        }
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            id = Convert.ToInt32(txtId.Text);
+            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
+            {
+
+                mySqlConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand("ProfesseurEdit", mySqlConnection);
+                mySqlCommand.CommandType = CommandType.StoredProcedure;
+                mySqlCommand.Parameters.AddWithValue("_id", id);
+                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
+
+                mySqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Modifié avec succès");
                 GridFill();
 
 
@@ -109,7 +128,7 @@ namespace EspanaCultura
                 txtId.Text = dvgProfesseur.CurrentRow.Cells[0].Value.ToString();
                 txtName.Text = dvgProfesseur.CurrentRow.Cells[1].Value.ToString();
                 txtPrenom.Text = dvgProfesseur.CurrentRow.Cells[2].Value.ToString();
-                btnSave.Text = "Modifier";
+              
 
 
             }
@@ -131,8 +150,6 @@ namespace EspanaCultura
 
         }
 
-
-
-
+      
     }
 }

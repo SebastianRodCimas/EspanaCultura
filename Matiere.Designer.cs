@@ -41,6 +41,7 @@ namespace EspanaCultura
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.btnModif = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgMatiere)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@ namespace EspanaCultura
             this.btnSave.BackColor = System.Drawing.Color.DarkRed;
             this.btnSave.Font = new System.Drawing.Font("Lato", 11.25F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(56, 362);
+            this.btnSave.Location = new System.Drawing.Point(33, 362);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 52);
             this.btnSave.TabIndex = 6;
@@ -74,7 +75,7 @@ namespace EspanaCultura
             this.btxSupr.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btxSupr.Font = new System.Drawing.Font("Lato", 10.25F);
             this.btxSupr.ForeColor = System.Drawing.Color.White;
-            this.btxSupr.Location = new System.Drawing.Point(640, 362);
+            this.btxSupr.Location = new System.Drawing.Point(612, 362);
             this.btxSupr.Name = "btxSupr";
             this.btxSupr.Size = new System.Drawing.Size(112, 52);
             this.btxSupr.TabIndex = 12;
@@ -87,7 +88,7 @@ namespace EspanaCultura
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCancel.Font = new System.Drawing.Font("Lato", 10.25F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(351, 362);
+            this.btnCancel.Location = new System.Drawing.Point(415, 362);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 52);
             this.btnCancel.TabIndex = 13;
@@ -170,12 +171,26 @@ namespace EspanaCultura
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.button5_Click);
             // 
+            // btnModif
+            // 
+            this.btnModif.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnModif.Font = new System.Drawing.Font("Lato", 11.25F);
+            this.btnModif.ForeColor = System.Drawing.Color.White;
+            this.btnModif.Location = new System.Drawing.Point(220, 362);
+            this.btnModif.Name = "btnModif";
+            this.btnModif.Size = new System.Drawing.Size(106, 52);
+            this.btnModif.TabIndex = 34;
+            this.btnModif.Text = "Modifier";
+            this.btnModif.UseVisualStyleBackColor = false;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
+            // 
             // Matiere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModif);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtId);
@@ -210,5 +225,6 @@ namespace EspanaCultura
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnModif;
     }
 }

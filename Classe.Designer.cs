@@ -41,6 +41,7 @@ namespace EspanaCultura
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btxSupr = new System.Windows.Forms.Button();
+            this.btnModif = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgClasse)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +114,7 @@ namespace EspanaCultura
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCancel.Font = new System.Drawing.Font("Lato", 10.25F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(325, 376);
+            this.btnCancel.Location = new System.Drawing.Point(400, 376);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 52);
             this.btnCancel.TabIndex = 11;
@@ -168,12 +169,26 @@ namespace EspanaCultura
             this.btxSupr.UseVisualStyleBackColor = false;
             this.btxSupr.Click += new System.EventHandler(this.button6_Click);
             // 
+            // btnModif
+            // 
+            this.btnModif.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnModif.Font = new System.Drawing.Font("Lato", 11.25F);
+            this.btnModif.ForeColor = System.Drawing.Color.White;
+            this.btnModif.Location = new System.Drawing.Point(212, 376);
+            this.btnModif.Name = "btnModif";
+            this.btnModif.Size = new System.Drawing.Size(106, 52);
+            this.btnModif.TabIndex = 33;
+            this.btnModif.Text = "Modifier";
+            this.btnModif.UseVisualStyleBackColor = false;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
+            // 
             // Classe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModif);
             this.Controls.Add(this.btxSupr);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.txtSearch);
@@ -211,6 +226,7 @@ namespace EspanaCultura
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btxSupr;
+        private System.Windows.Forms.Button btnModif;
     }
 }
 

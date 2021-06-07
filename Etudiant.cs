@@ -38,7 +38,7 @@ namespace EspanaCultura
         {
             txtId.Text = txtIdClasse.Text =txtName.Text = txtPrenom.Text = txtIdClasseS.Text ="";
             id = 0;
-            btnSave.Text = "Sauvegarder";
+          
 
         }
         private void Button1_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace EspanaCultura
             using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
             {
                 mySqlConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand("EtudiantAddOrEdit", mySqlConnection);
+                MySqlCommand mySqlCommand = new MySqlCommand("EtudiantAdd", mySqlConnection);
                 mySqlCommand.CommandType = CommandType.StoredProcedure;
                 mySqlCommand.Parameters.AddWithValue("_id", id);
                 mySqlCommand.Parameters.AddWithValue("_id_classe", txtIdClasse.Text.Trim());
@@ -62,8 +62,31 @@ namespace EspanaCultura
 
             }
         }
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            id = Convert.ToInt32(txtId.Text);
+            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
+            {
 
-    
+                mySqlConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand("EtudiantEdit", mySqlConnection);
+                mySqlCommand.CommandType = CommandType.StoredProcedure;
+                mySqlCommand.Parameters.AddWithValue("_id", id);
+                mySqlCommand.Parameters.AddWithValue("_id_classe", txtIdClasse.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_ID_classe_Se_Trouve", txtIdClasseS.Text.Trim());
+
+                mySqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Modifié avec succès");
+                GridFill();
+
+
+            }
+
+        }
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             Clear();
@@ -121,7 +144,7 @@ namespace EspanaCultura
                 txtName.Text = dvgEtudiant.CurrentRow.Cells[2].Value.ToString();
                 txtPrenom.Text = dvgEtudiant.CurrentRow.Cells[3].Value.ToString();
                 txtIdClasseS.Text = dvgEtudiant.CurrentRow.Cells[4].Value.ToString();
-                btnSave.Text = "Modifier";
+               
 
 
             }
@@ -135,7 +158,7 @@ namespace EspanaCultura
                 txtName.Text = dvgEtudiant.CurrentRow.Cells[2].Value.ToString();
                 txtPrenom.Text = dvgEtudiant.CurrentRow.Cells[3].Value.ToString();
                 txtIdClasseS.Text = dvgEtudiant.CurrentRow.Cells[4].Value.ToString();
-                btnSave.Text = "Modifier";
+               
 
 
             }
@@ -154,5 +177,6 @@ namespace EspanaCultura
 
         }
 
+      
     }
 }

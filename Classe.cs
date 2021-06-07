@@ -38,7 +38,7 @@ namespace EspanaCultura
         {
             txtId.Text = txtName.Text = "";
             id = 0;
-            btnSave.Text = "Sauvegarder";
+           
 
         }
 
@@ -47,8 +47,9 @@ namespace EspanaCultura
             id = Convert.ToInt32(txtId.Text);
             using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
             {
+                
                 mySqlConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand("ClasseAddOrEdit", mySqlConnection);
+                MySqlCommand mySqlCommand = new MySqlCommand("ClasseAdd", mySqlConnection);
                 mySqlCommand.CommandType = CommandType.StoredProcedure;
                 mySqlCommand.Parameters.AddWithValue("_id", id);
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
@@ -57,6 +58,26 @@ namespace EspanaCultura
                 MessageBox.Show("Ajouté avec succès");
                 GridFill();
                 
+
+            }
+
+        }
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            id = Convert.ToInt32(txtId.Text);
+            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
+            {
+
+                mySqlConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand("ClasseEdit", mySqlConnection);
+                mySqlCommand.CommandType = CommandType.StoredProcedure;
+                mySqlCommand.Parameters.AddWithValue("_id", id);
+                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
+
+                mySqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Modifié avec succès");
+                GridFill();
+
 
             }
 
@@ -115,7 +136,7 @@ namespace EspanaCultura
             {
                 txtId.Text = dvgClasse.CurrentRow.Cells[0].Value.ToString();
                 txtName.Text = dvgClasse.CurrentRow.Cells[1].Value.ToString();
-                btnSave.Text = "Modifier";
+                
                
                     
             }
@@ -130,9 +151,6 @@ namespace EspanaCultura
         {
 
         }
-
-       
-       
 
        
     }

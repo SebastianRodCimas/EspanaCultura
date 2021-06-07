@@ -37,7 +37,7 @@ namespace EspanaCultura
         {
             txtId.Text = txtName.Text = "";
             id = 0;
-            btnSave.Text = "Sauvegarder";
+           
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -46,13 +46,32 @@ namespace EspanaCultura
             using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
             {
                 mySqlConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand("MatiereAddOrEdit", mySqlConnection);
+                MySqlCommand mySqlCommand = new MySqlCommand("MatiereAdd", mySqlConnection);
                 mySqlCommand.CommandType = CommandType.StoredProcedure;
                 mySqlCommand.Parameters.AddWithValue("_id", id);
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
 
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Ajouté avec succès");
+                GridFill();
+
+
+            }
+        }
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            id = Convert.ToInt32(txtId.Text);
+            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
+            {
+
+                mySqlConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand("MatiereEdit", mySqlConnection);
+                mySqlCommand.CommandType = CommandType.StoredProcedure;
+                mySqlCommand.Parameters.AddWithValue("_id", id);
+                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
+
+                mySqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Modifié avec succès");
                 GridFill();
 
 
@@ -109,7 +128,7 @@ namespace EspanaCultura
             {
                 txtId.Text = dvgMatiere.CurrentRow.Cells[0].Value.ToString();
                 txtName.Text = dvgMatiere.CurrentRow.Cells[1].Value.ToString();
-                btnSave.Text = "Modifier";
+                
 
 
             }
