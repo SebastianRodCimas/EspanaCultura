@@ -63,10 +63,7 @@ namespace EspanaCultura
             }
         }
 
-       
-
-       
-
+    
         private void button3_Click(object sender, EventArgs e)
         {
             Clear();
@@ -115,28 +112,38 @@ namespace EspanaCultura
             f2.ShowDialog();
         }
 
-        private void Etudiant_DoubleClick(object sender, EventArgs e)
+        private void dvgEtudiant_DoubleClick(object sender, EventArgs e)
         {
             if (dvgEtudiant.CurrentRow.Index != -1)
             {
                 txtId.Text = dvgEtudiant.CurrentRow.Cells[0].Value.ToString();
-                txtIdClasse.Text = dvgEtudiant.CurrentRow.Cells[0].Value.ToString();
-                txtName.Text = dvgEtudiant.CurrentRow.Cells[1].Value.ToString();
-                txtPrenom.Text = dvgEtudiant.CurrentRow.Cells[2].Value.ToString();
-                txtIdClasseS.Text = dvgEtudiant.CurrentRow.Cells[0].Value.ToString();
+                txtIdClasse.Text = dvgEtudiant.CurrentRow.Cells[1].Value.ToString();
+                txtName.Text = dvgEtudiant.CurrentRow.Cells[2].Value.ToString();
+                txtPrenom.Text = dvgEtudiant.CurrentRow.Cells[3].Value.ToString();
+                txtIdClasseS.Text = dvgEtudiant.CurrentRow.Cells[4].Value.ToString();
                 btnSave.Text = "Modifier";
 
 
             }
         }
+        private void Etudiant_DoubleClick(object sender, EventArgs e)
+        {
+            if (dvgEtudiant.CurrentRow.Index != -1)
+            {
+                txtId.Text = dvgEtudiant.CurrentRow.Cells[0].Value.ToString();
+                txtIdClasse.Text = dvgEtudiant.CurrentRow.Cells[1].Value.ToString();
+                txtName.Text = dvgEtudiant.CurrentRow.Cells[2].Value.ToString();
+                txtPrenom.Text = dvgEtudiant.CurrentRow.Cells[3].Value.ToString();
+                txtIdClasseS.Text = dvgEtudiant.CurrentRow.Cells[4].Value.ToString();
+                btnSave.Text = "Modifier";
 
+
+            }
+        }
         private void dvgClasse_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-      
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -147,6 +154,5 @@ namespace EspanaCultura
 
         }
 
-       
     }
 }

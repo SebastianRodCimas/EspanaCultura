@@ -18,10 +18,7 @@ namespace EspanaCultura
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buttonclasse_Click(object sender, EventArgs e)
         {
@@ -51,6 +48,14 @@ namespace EspanaCultura
             this.Hide();
             Etudiant f5 = new Etudiant();
             f5.ShowDialog();
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

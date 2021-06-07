@@ -99,6 +99,7 @@ namespace EspanaCultura
             this.dvgEtudiant.Size = new System.Drawing.Size(484, 275);
             this.dvgEtudiant.TabIndex = 13;
             this.dvgEtudiant.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgClasse_CellContentClick);
+            this.dvgEtudiant.DoubleClick += new System.EventHandler(this.dvgEtudiant_DoubleClick);
             // 
             // txtSearch
             // 
