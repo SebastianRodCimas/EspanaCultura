@@ -13,6 +13,34 @@ namespace EspanaCultura
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Clear();
+            GridFill();
+        }
+        void GridFill()
+        {
+            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
+            {
+                mySqlConnection.Open();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("ClasseViewAll", mySqlConnection);
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dataClasse = new DataTable();
+                sqlDataAdapter.Fill(dataClasse);
+                dvgClasse.DataSource = dataClasse;
+                dvgClasse.Columns[0].Visible = true;
+            }
+
+        }
+
+
+        void Clear()
+        {
+            txtId.Text = txtName.Text = "";
+            id = 0;
+            btnSave.Text = "Sauvegarder";
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -33,78 +61,63 @@ namespace EspanaCultura
             }
 
         }
-        void GridFill()
-        {
-            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
-            {
-                mySqlConnection.Open();
-                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("ClasseViewAll", mySqlConnection);
-                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable dataClasse = new DataTable();
-                sqlDataAdapter.Fill(dataClasse);
-                dvgClasse.DataSource = dataClasse;
-                dvgClasse.Columns[0].Visible = true;
-            }
 
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             Clear();
             GridFill();
         }
-        void Clear()
+        private void button6_Click(object sender, EventArgs e)
         {
-            txtId.Text = txtName.Text = "";
-            id = 0;
-            button1.Text = "Sauvegarder";
-           
-        }
 
-        private void dvgClasse_DoubleClick(object sender, EventArgs e)
-        {
-            if(dvgClasse.CurrentRow.Index != -1)
+            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
             {
-                id = Convert.ToInt32(dvgClasse.CurrentRow.Cells[0].Value.ToString());
-                txtName.Text = dvgClasse.CurrentRow.Cells[1].Value.ToString();
-                button1.Text = "Actualiser";
-               
-
+                mySqlConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand("ClasseDelete", mySqlConnection);
+                mySqlCommand.CommandType = CommandType.StoredProcedure;
+                mySqlCommand.Parameters.AddWithValue("_id", txtId.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
+                mySqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Supprimer avec succès");
+                Clear();
+                GridFill();
             }
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
             {
                 mySqlConnection.Open();
-                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("ClasseSearchByValue", mySqlConnection);
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("ClasseSearch", mySqlConnection);
                 sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlDataAdapter.SelectCommand.Parameters.AddWithValue("_SearchByValue",textBox6.Text );
+               
+                sqlDataAdapter.SelectCommand.Parameters.AddWithValue("_SearchByValue", txtSearch.Text);
                 DataTable dataClasse = new DataTable();
                 sqlDataAdapter.Fill(dataClasse);
                 dvgClasse.DataSource = dataClasse;
-                dvgClasse.Columns[0].Visible = false;
+                dvgClasse.Columns[0].Visible = true;
+                
+               
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            Clear();
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void dvgClasse_DoubleClick(object sender, EventArgs e)
         {
-            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
+            if(dvgClasse.CurrentRow.Index != -1)
             {
-                mySqlConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand("ClasseDeleteById", mySqlConnection);
-                mySqlCommand.CommandType = CommandType.StoredProcedure;
-                mySqlCommand.Parameters.AddWithValue("id", id);
-                mySqlCommand.ExecuteNonQuery();
-                MessageBox.Show("Supprimer avec succès");
-                Clear();
-                GridFill();
+                txtId.Text = dvgClasse.CurrentRow.Cells[0].Value.ToString();
+                txtName.Text = dvgClasse.CurrentRow.Cells[1].Value.ToString();
+                btnSave.Text = "Modifier";
+               
+                    
             }
         }
 
@@ -118,29 +131,8 @@ namespace EspanaCultura
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-           
-            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
-            {
-                mySqlConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand("ClasseDeleteByName", mySqlConnection);
-                mySqlCommand.CommandType = CommandType.StoredProcedure;
-               
-                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
-                mySqlCommand.ExecuteNonQuery();
-                MessageBox.Show("Supprimer avec succès");
-                Clear();
-                GridFill();
-            }
-        }
+       
+       
 
        
     }

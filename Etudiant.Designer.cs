@@ -29,75 +29,76 @@ namespace EspanaCultura
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dvgClasse = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Etudiant));
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btxSupr = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.dvgEtudiant = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.labelId = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.TitleId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.labelNom = new System.Windows.Forms.Label();
+            this.TitleName = new System.Windows.Forms.Label();
             this.txtIdClasse = new System.Windows.Forms.TextBox();
             this.txtIdClasseS = new System.Windows.Forms.TextBox();
             this.txtPrenom = new System.Windows.Forms.TextBox();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.labelIdClasseS = new System.Windows.Forms.Label();
-            this.labelPrenom = new System.Windows.Forms.Label();
-            this.labelIdClasse = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgClasse)).BeginInit();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.TitleIdClasseS = new System.Windows.Forms.Label();
+            this.TitlePrenom = new System.Windows.Forms.Label();
+            this.TitleIdClasse = new System.Windows.Forms.Label();
+            this.btnMenu = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgEtudiant)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkRed;
-            this.button1.Font = new System.Drawing.Font("Lato", 11.25F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(26, 361);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 52);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSave.Font = new System.Drawing.Font("Lato", 11.25F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(67, 370);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 52);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Ajouter";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // button2
+            // btxSupr
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Font = new System.Drawing.Font("Lato", 10.25F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(185, 361);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 52);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Supprimer";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btxSupr.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btxSupr.Font = new System.Drawing.Font("Lato", 10.25F);
+            this.btxSupr.ForeColor = System.Drawing.Color.White;
+            this.btxSupr.Location = new System.Drawing.Point(632, 361);
+            this.btxSupr.Name = "btxSupr";
+            this.btxSupr.Size = new System.Drawing.Size(112, 52);
+            this.btxSupr.TabIndex = 11;
+            this.btxSupr.Text = "Supprimer";
+            this.btxSupr.UseVisualStyleBackColor = false;
+            this.btxSupr.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button3.Font = new System.Drawing.Font("Lato", 10.25F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(348, 361);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 52);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Annuler";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCancel.Font = new System.Drawing.Font("Lato", 10.25F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(348, 361);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(109, 52);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Text = "Annuler";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dvgClasse
+            // dvgEtudiant
             // 
-            this.dvgClasse.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.dvgClasse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgClasse.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dvgClasse.Location = new System.Drawing.Point(304, 67);
-            this.dvgClasse.Name = "dvgClasse";
-            this.dvgClasse.Size = new System.Drawing.Size(484, 275);
-            this.dvgClasse.TabIndex = 13;
-            this.dvgClasse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgClasse_CellContentClick);
+            this.dvgEtudiant.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.dvgEtudiant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgEtudiant.GridColor = System.Drawing.SystemColors.Highlight;
+            this.dvgEtudiant.Location = new System.Drawing.Point(304, 67);
+            this.dvgEtudiant.Name = "dvgEtudiant";
+            this.dvgEtudiant.Size = new System.Drawing.Size(484, 275);
+            this.dvgEtudiant.TabIndex = 13;
+            this.dvgEtudiant.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgClasse_CellContentClick);
             // 
             // txtSearch
             // 
@@ -107,30 +108,30 @@ namespace EspanaCultura
             this.txtSearch.Size = new System.Drawing.Size(191, 21);
             this.txtSearch.TabIndex = 16;
             // 
-            // button4
+            // btnSearch
             // 
-            this.button4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button4.Font = new System.Drawing.Font("Lato", 10.25F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(573, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(157, 42);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Rechercher";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnSearch.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Lato", 10.25F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(573, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(157, 42);
+            this.btnSearch.TabIndex = 17;
+            this.btnSearch.Text = "Rechercher";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.button4_Click);
             // 
-            // labelId
+            // TitleId
             // 
-            this.labelId.AutoSize = true;
-            this.labelId.BackColor = System.Drawing.Color.White;
-            this.labelId.Font = new System.Drawing.Font("Lato", 14.25F);
-            this.labelId.ForeColor = System.Drawing.Color.Orange;
-            this.labelId.Location = new System.Drawing.Point(3, 67);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(26, 23);
-            this.labelId.TabIndex = 19;
-            this.labelId.Text = "Id";
+            this.TitleId.AutoSize = true;
+            this.TitleId.BackColor = System.Drawing.Color.White;
+            this.TitleId.Font = new System.Drawing.Font("Lato", 14.25F);
+            this.TitleId.ForeColor = System.Drawing.Color.Orange;
+            this.TitleId.Location = new System.Drawing.Point(3, 67);
+            this.TitleId.Name = "TitleId";
+            this.TitleId.Size = new System.Drawing.Size(26, 23);
+            this.TitleId.TabIndex = 19;
+            this.TitleId.Text = "Id";
             // 
             // txtId
             // 
@@ -140,18 +141,18 @@ namespace EspanaCultura
             this.txtId.Size = new System.Drawing.Size(121, 21);
             this.txtId.TabIndex = 20;
             // 
-            // labelNom
+            // TitleName
             // 
-            this.labelNom.AutoSize = true;
-            this.labelNom.BackColor = System.Drawing.Color.White;
-            this.labelNom.Font = new System.Drawing.Font("Lato", 14.25F);
-            this.labelNom.ForeColor = System.Drawing.Color.Orange;
-            this.labelNom.Location = new System.Drawing.Point(3, 188);
-            this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(52, 23);
-            this.labelNom.TabIndex = 21;
-            this.labelNom.Text = "Nom";
-            this.labelNom.Click += new System.EventHandler(this.label2_Click);
+            this.TitleName.AutoSize = true;
+            this.TitleName.BackColor = System.Drawing.Color.White;
+            this.TitleName.Font = new System.Drawing.Font("Lato", 14.25F);
+            this.TitleName.ForeColor = System.Drawing.Color.Orange;
+            this.TitleName.Location = new System.Drawing.Point(3, 188);
+            this.TitleName.Name = "TitleName";
+            this.TitleName.Size = new System.Drawing.Size(52, 23);
+            this.TitleName.TabIndex = 21;
+            this.TitleName.Text = "Nom";
+            this.TitleName.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtIdClasse
             // 
@@ -178,62 +179,62 @@ namespace EspanaCultura
             this.txtPrenom.TabIndex = 24;
             this.txtPrenom.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // txtNom
+            // txtName
             // 
-            this.txtNom.Location = new System.Drawing.Point(109, 193);
-            this.txtNom.Multiline = true;
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(121, 21);
-            this.txtNom.TabIndex = 25;
+            this.txtName.Location = new System.Drawing.Point(109, 193);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(121, 21);
+            this.txtName.TabIndex = 25;
             // 
-            // labelIdClasseS
+            // TitleIdClasseS
             // 
-            this.labelIdClasseS.AutoSize = true;
-            this.labelIdClasseS.BackColor = System.Drawing.Color.White;
-            this.labelIdClasseS.Font = new System.Drawing.Font("Lato", 14.25F);
-            this.labelIdClasseS.ForeColor = System.Drawing.Color.Orange;
-            this.labelIdClasseS.Location = new System.Drawing.Point(3, 305);
-            this.labelIdClasseS.Name = "labelIdClasseS";
-            this.labelIdClasseS.Size = new System.Drawing.Size(154, 23);
-            this.labelIdClasseS.TabIndex = 26;
-            this.labelIdClasseS.Text = "IdClasseSeTrouve";
+            this.TitleIdClasseS.AutoSize = true;
+            this.TitleIdClasseS.BackColor = System.Drawing.Color.White;
+            this.TitleIdClasseS.Font = new System.Drawing.Font("Lato", 14.25F);
+            this.TitleIdClasseS.ForeColor = System.Drawing.Color.Orange;
+            this.TitleIdClasseS.Location = new System.Drawing.Point(3, 305);
+            this.TitleIdClasseS.Name = "TitleIdClasseS";
+            this.TitleIdClasseS.Size = new System.Drawing.Size(154, 23);
+            this.TitleIdClasseS.TabIndex = 26;
+            this.TitleIdClasseS.Text = "IdClasseSeTrouve";
             // 
-            // labelPrenom
+            // TitlePrenom
             // 
-            this.labelPrenom.AutoSize = true;
-            this.labelPrenom.BackColor = System.Drawing.Color.White;
-            this.labelPrenom.Font = new System.Drawing.Font("Lato", 14.25F);
-            this.labelPrenom.ForeColor = System.Drawing.Color.Orange;
-            this.labelPrenom.Location = new System.Drawing.Point(3, 250);
-            this.labelPrenom.Name = "labelPrenom";
-            this.labelPrenom.Size = new System.Drawing.Size(76, 23);
-            this.labelPrenom.TabIndex = 27;
-            this.labelPrenom.Text = "Prénom";
+            this.TitlePrenom.AutoSize = true;
+            this.TitlePrenom.BackColor = System.Drawing.Color.White;
+            this.TitlePrenom.Font = new System.Drawing.Font("Lato", 14.25F);
+            this.TitlePrenom.ForeColor = System.Drawing.Color.Orange;
+            this.TitlePrenom.Location = new System.Drawing.Point(3, 250);
+            this.TitlePrenom.Name = "TitlePrenom";
+            this.TitlePrenom.Size = new System.Drawing.Size(76, 23);
+            this.TitlePrenom.TabIndex = 27;
+            this.TitlePrenom.Text = "Prénom";
             // 
-            // labelIdClasse
+            // TitleIdClasse
             // 
-            this.labelIdClasse.AutoSize = true;
-            this.labelIdClasse.BackColor = System.Drawing.Color.White;
-            this.labelIdClasse.Font = new System.Drawing.Font("Lato", 14.25F);
-            this.labelIdClasse.ForeColor = System.Drawing.Color.Orange;
-            this.labelIdClasse.Location = new System.Drawing.Point(1, 138);
-            this.labelIdClasse.Name = "labelIdClasse";
-            this.labelIdClasse.Size = new System.Drawing.Size(78, 23);
-            this.labelIdClasse.TabIndex = 28;
-            this.labelIdClasse.Text = "IdClasse";
+            this.TitleIdClasse.AutoSize = true;
+            this.TitleIdClasse.BackColor = System.Drawing.Color.White;
+            this.TitleIdClasse.Font = new System.Drawing.Font("Lato", 14.25F);
+            this.TitleIdClasse.ForeColor = System.Drawing.Color.Orange;
+            this.TitleIdClasse.Location = new System.Drawing.Point(1, 138);
+            this.TitleIdClasse.Name = "TitleIdClasse";
+            this.TitleIdClasse.Size = new System.Drawing.Size(78, 23);
+            this.TitleIdClasse.TabIndex = 28;
+            this.TitleIdClasse.Text = "IdClasse";
             // 
-            // button5
+            // btnMenu
             // 
-            this.button5.BackColor = System.Drawing.Color.Black;
-            this.button5.Font = new System.Drawing.Font("Lato", 11.25F);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(26, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 52);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "Menu";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnMenu.BackColor = System.Drawing.Color.Black;
+            this.btnMenu.Font = new System.Drawing.Font("Lato", 11.25F);
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Location = new System.Drawing.Point(26, 4);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(106, 52);
+            this.btnMenu.TabIndex = 29;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.button5_Click);
             // 
             // Etudiant
             // 
@@ -241,26 +242,29 @@ namespace EspanaCultura
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.labelIdClasse);
-            this.Controls.Add(this.labelPrenom);
-            this.Controls.Add(this.labelIdClasseS);
-            this.Controls.Add(this.txtNom);
+            this.Controls.Add(this.btnMenu);
+            this.Controls.Add(this.TitleIdClasse);
+            this.Controls.Add(this.TitlePrenom);
+            this.Controls.Add(this.TitleIdClasseS);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.txtIdClasseS);
             this.Controls.Add(this.txtIdClasse);
-            this.Controls.Add(this.labelNom);
+            this.Controls.Add(this.TitleName);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.labelId);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.TitleId);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dvgClasse);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dvgEtudiant);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btxSupr);
+            this.Controls.Add(this.btnSave);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Etudiant";
             this.Text = "Etudiant - Espana Cultura";
-            ((System.ComponentModel.ISupportInitialize)(this.dvgClasse)).EndInit();
+            this.Load += new System.EventHandler(this.Etudiant_Load);
+            this.DoubleClick += new System.EventHandler(this.Etudiant_DoubleClick);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgEtudiant)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,22 +272,22 @@ namespace EspanaCultura
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dvgClasse;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btxSupr;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridView dvgEtudiant;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label labelId;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label TitleId;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label labelNom;
+        private System.Windows.Forms.Label TitleName;
         private System.Windows.Forms.TextBox txtIdClasse;
         private System.Windows.Forms.TextBox txtIdClasseS;
         private System.Windows.Forms.TextBox txtPrenom;
-        private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.Label labelIdClasseS;
-        private System.Windows.Forms.Label labelPrenom;
-        private System.Windows.Forms.Label labelIdClasse;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label TitleIdClasseS;
+        private System.Windows.Forms.Label TitlePrenom;
+        private System.Windows.Forms.Label TitleIdClasse;
+        private System.Windows.Forms.Button btnMenu;
     }
 }

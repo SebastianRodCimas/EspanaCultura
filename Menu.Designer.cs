@@ -110,6 +110,7 @@ namespace EspanaCultura
             this.Controls.Add(this.buttonmatiere);
             this.Controls.Add(this.buttonclasse);
             this.Controls.Add(this.titre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = " Menu - EspanaCultura ";
             this.ResumeLayout(false);
