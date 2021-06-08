@@ -42,21 +42,21 @@ namespace EspanaCultura
 
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e) //Bouton pour add
         {
-            id = Convert.ToInt32(txtId.Text);
-            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))
+            id = Convert.ToInt32(txtId.Text); //on convertir la valeur en int32
+            using (MySqlConnection mySqlConnection = new MySqlConnection(connectionString))//connect to bdd
             {
                 mySqlConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand("ProfesseurAdd", mySqlConnection);
+                MySqlCommand mySqlCommand = new MySqlCommand("ProfesseurAdd", mySqlConnection); //lance procédure
                 mySqlCommand.CommandType = CommandType.StoredProcedure;
-                mySqlCommand.Parameters.AddWithValue("_id", id);
-                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_id", id); //variable à remplir pour utiliser la procédure 
+                mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim()); 
                 mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
 
                 mySqlCommand.ExecuteNonQuery();
-                MessageBox.Show("Ajouté avec succès");
-                GridFill();
+                MessageBox.Show("Ajouté avec succès"); //message pop-up
+                GridFill(); //actualise la table
 
 
             }
