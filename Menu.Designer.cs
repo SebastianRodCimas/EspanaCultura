@@ -35,6 +35,7 @@ namespace EspanaCultura
             this.buttonmatiere = new System.Windows.Forms.Button();
             this.buttonprofesseur = new System.Windows.Forms.Button();
             this.buttonetudiant = new System.Windows.Forms.Button();
+            this.BtnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titre
@@ -99,12 +100,26 @@ namespace EspanaCultura
             this.buttonetudiant.UseVisualStyleBackColor = false;
             this.buttonetudiant.Click += new System.EventHandler(this.buttonetudiant_Click);
             // 
+            // BtnClose
+            // 
+            this.BtnClose.BackColor = System.Drawing.Color.DimGray;
+            this.BtnClose.Font = new System.Drawing.Font("Lato", 12.75F);
+            this.BtnClose.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClose.Location = new System.Drawing.Point(34, 48);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(138, 54);
+            this.BtnClose.TabIndex = 5;
+            this.BtnClose.Text = "Fermer";
+            this.BtnClose.UseVisualStyleBackColor = false;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1268, 621);
+            this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.buttonetudiant);
             this.Controls.Add(this.buttonprofesseur);
             this.Controls.Add(this.buttonmatiere);
@@ -126,5 +141,6 @@ namespace EspanaCultura
         private System.Windows.Forms.Button buttonprofesseur;
         private System.Windows.Forms.Button buttonetudiant;
         private System.Windows.Forms.Button buttonclasse;
+        private System.Windows.Forms.Button BtnClose;
     }
 }
