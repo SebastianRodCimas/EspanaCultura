@@ -80,7 +80,7 @@ namespace EspanaCultura
             // 
             this.buttonprofesseur.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonprofesseur.Font = new System.Drawing.Font("Lato", 9.75F);
-            this.buttonprofesseur.Location = new System.Drawing.Point(361, 493);
+            this.buttonprofesseur.Location = new System.Drawing.Point(361, 508);
             this.buttonprofesseur.Name = "buttonprofesseur";
             this.buttonprofesseur.Size = new System.Drawing.Size(138, 54);
             this.buttonprofesseur.TabIndex = 3;
@@ -92,7 +92,7 @@ namespace EspanaCultura
             // 
             this.buttonetudiant.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonetudiant.Font = new System.Drawing.Font("Lato", 9.75F);
-            this.buttonetudiant.Location = new System.Drawing.Point(777, 493);
+            this.buttonetudiant.Location = new System.Drawing.Point(777, 508);
             this.buttonetudiant.Name = "buttonetudiant";
             this.buttonetudiant.Size = new System.Drawing.Size(138, 54);
             this.buttonetudiant.TabIndex = 4;

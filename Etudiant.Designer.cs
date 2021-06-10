@@ -56,7 +56,7 @@ namespace EspanaCultura
             this.btnSave.BackColor = System.Drawing.Color.DarkRed;
             this.btnSave.Font = new System.Drawing.Font("Lato", 11.25F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(51, 370);
+            this.btnSave.Location = new System.Drawing.Point(51, 386);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 52);
             this.btnSave.TabIndex = 3;
@@ -69,7 +69,7 @@ namespace EspanaCultura
             this.btxSupr.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btxSupr.Font = new System.Drawing.Font("Lato", 10.25F);
             this.btxSupr.ForeColor = System.Drawing.Color.White;
-            this.btxSupr.Location = new System.Drawing.Point(640, 370);
+            this.btxSupr.Location = new System.Drawing.Point(639, 386);
             this.btxSupr.Name = "btxSupr";
             this.btxSupr.Size = new System.Drawing.Size(112, 52);
             this.btxSupr.TabIndex = 11;
@@ -82,7 +82,7 @@ namespace EspanaCultura
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCancel.Font = new System.Drawing.Font("Lato", 10.25F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(430, 370);
+            this.btnCancel.Location = new System.Drawing.Point(447, 386);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 52);
             this.btnCancel.TabIndex = 12;
@@ -166,7 +166,7 @@ namespace EspanaCultura
             // 
             // txtIdClasseS
             // 
-            this.txtIdClasseS.Location = new System.Drawing.Point(163, 307);
+            this.txtIdClasseS.Location = new System.Drawing.Point(176, 305);
             this.txtIdClasseS.Multiline = true;
             this.txtIdClasseS.Name = "txtIdClasseS";
             this.txtIdClasseS.Size = new System.Drawing.Size(87, 21);
@@ -243,7 +243,7 @@ namespace EspanaCultura
             this.btnModif.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnModif.Font = new System.Drawing.Font("Lato", 11.25F);
             this.btnModif.ForeColor = System.Drawing.Color.White;
-            this.btnModif.Location = new System.Drawing.Point(243, 370);
+            this.btnModif.Location = new System.Drawing.Point(243, 386);
             this.btnModif.Name = "btnModif";
             this.btnModif.Size = new System.Drawing.Size(106, 52);
             this.btnModif.TabIndex = 34;

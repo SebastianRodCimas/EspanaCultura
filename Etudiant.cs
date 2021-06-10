@@ -36,7 +36,7 @@ namespace EspanaCultura
 
         void Clear()
         {
-            txtId.Text = txtIdClasse.Text =txtName.Text = txtPrenom.Text = txtIdClasseS.Text ="";
+            txtId.Text = txtIdClasse.Text =txtName.Text = txtPrenom.Text = txtIdClasseS.Text  = "";
             id = 0;
           
 
@@ -54,6 +54,7 @@ namespace EspanaCultura
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_ID_classe_Se_Trouve", txtIdClasseS.Text.Trim());
+               
 
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Ajouté avec succès");
@@ -76,6 +77,7 @@ namespace EspanaCultura
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_ID_classe_Se_Trouve", txtIdClasseS.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_id_locomotion", txtLoc.Text.Trim());
 
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Modifié avec succès");
@@ -106,6 +108,7 @@ namespace EspanaCultura
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_ID_classe_Se_Trouve", txtIdClasseS.Text.Trim());
+                mySqlCommand.Parameters.AddWithValue("_id_locomotion", txtLoc.Text.Trim());
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Supprimer avec succès");
                 Clear();
@@ -147,6 +150,7 @@ namespace EspanaCultura
                
 
 
+
             }
         }
         private void Etudiant_DoubleClick(object sender, EventArgs e)
@@ -158,7 +162,8 @@ namespace EspanaCultura
                 txtName.Text = dvgEtudiant.CurrentRow.Cells[2].Value.ToString();
                 txtPrenom.Text = dvgEtudiant.CurrentRow.Cells[3].Value.ToString();
                 txtIdClasseS.Text = dvgEtudiant.CurrentRow.Cells[4].Value.ToString();
-               
+              
+
 
 
             }
@@ -177,6 +182,14 @@ namespace EspanaCultura
 
         }
 
-      
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BoxEtudiant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

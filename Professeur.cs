@@ -53,6 +53,7 @@ namespace EspanaCultura
                 mySqlCommand.Parameters.AddWithValue("_id", id); //variable à remplir pour utiliser la procédure 
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim()); 
                 mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
+            
 
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Ajouté avec succès"); //message pop-up
@@ -73,6 +74,8 @@ namespace EspanaCultura
                 mySqlCommand.Parameters.AddWithValue("_id", id);
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
+              
+
 
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Modifié avec succès");
@@ -99,7 +102,9 @@ namespace EspanaCultura
                     mySqlCommand.Parameters.AddWithValue("_id", txtId.Text.Trim());
                     mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                     mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
-                    mySqlCommand.ExecuteNonQuery();
+              
+
+                mySqlCommand.ExecuteNonQuery();
                     MessageBox.Show("Supprimer avec succès");
                     Clear();
                     GridFill();
@@ -128,7 +133,7 @@ namespace EspanaCultura
                 txtId.Text = dvgProfesseur.CurrentRow.Cells[0].Value.ToString();
                 txtName.Text = dvgProfesseur.CurrentRow.Cells[1].Value.ToString();
                 txtPrenom.Text = dvgProfesseur.CurrentRow.Cells[2].Value.ToString();
-              
+                
 
 
             }

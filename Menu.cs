@@ -49,6 +49,7 @@ namespace EspanaCultura
             Etudiant f5 = new Etudiant();
             f5.ShowDialog();
         }
+       
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -62,5 +63,7 @@ namespace EspanaCultura
         {
             this.Close();
         }
+
+       
     }
 }

@@ -32,7 +32,8 @@ namespace EspanaCultura
             }
 
         }
-       
+      
+
         void Clear()
         {
             txtId.Text = txtName.Text = "";
