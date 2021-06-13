@@ -77,7 +77,7 @@ namespace EspanaCultura
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_ID_classe_Se_Trouve", txtIdClasseS.Text.Trim());
-                mySqlCommand.Parameters.AddWithValue("_id_locomotion", txtLoc.Text.Trim());
+              
 
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Modifié avec succès");
@@ -108,7 +108,7 @@ namespace EspanaCultura
                 mySqlCommand.Parameters.AddWithValue("_nom", txtName.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_prenom", txtPrenom.Text.Trim());
                 mySqlCommand.Parameters.AddWithValue("_ID_classe_Se_Trouve", txtIdClasseS.Text.Trim());
-                mySqlCommand.Parameters.AddWithValue("_id_locomotion", txtLoc.Text.Trim());
+                
                 mySqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Supprimer avec succès");
                 Clear();
